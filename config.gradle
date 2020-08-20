@@ -1,0 +1,57 @@
+ext {
+
+    android = [
+            compileSdkVersion: 29,
+            buildToolsVersion: "30.0.1",
+
+            applicationId    : "com.dapeng.online",
+            minSdkVersion    : 21,
+            targetSdkVersion : 29,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    libsVersion = [
+            gson = "2.8.6",
+            glide = "4.11.0"
+    ]
+
+    dependencies = [
+            // json 解析
+            gson               : "com.google.code.gson:gson:$rootProject.gson",
+
+            // 图片加载 Glide
+            glide              : "com.github.bumptech.glide:glide:$rootProject.glide",
+            glideComplier      : "com.github.bumptech.glide:compiler:4.11.0",
+
+            // 安卓 MaterialDesign
+            materialDesign     : 'com.google.android.material:material:1.2.0',
+
+            // 网络访问
+            okhttp             : "com.squareup.okhttp3:okhttp:4.8.1",
+
+            // lifecycle 框架
+            // ViewModel and LiveData
+            lifecycleextensions: "android.arch.lifecycle:extensions:1.1.1",
+            // alternatively, just ViewModel
+            viewmodel          : "android.arch.lifecycle:viewmodel:1.1.1",
+            // alternatively, just LiveData
+            livedata           : "android.arch.lifecycle:livedata:1.1.1",
+
+            // 智能刷新布局框架 刷新布局
+            smartRefreshLayout : 'com.scwang.smart:refresh-layout-kernel:2.0.1',      //核心必须依赖
+            classicsheader     : 'com.scwang.smart:refresh-header-classics:2.0.1',    //经典刷新头
+            radarheader        : 'com.scwang.smart:refresh-header-radar:2.0.1',       //雷达刷新头
+            falsifyheader      : 'com.scwang.smart:refresh-header-falsify:2.0.1',     //虚拟刷新头
+            materialheader     : 'com.scwang.smart:refresh-header-material:2.0.1',    //谷歌刷新头
+            twoheader          : 'com.scwang.smart:refresh-header-two-level:2.0.1',   //二级刷新头
+            footerball         : 'com.scwang.smart:refresh-footer-ball:2.0.1',        //球脉冲加载
+            footerclassics     : 'com.scwang.smart:refresh-footer-classics:2.0.1',    //经典加载
+
+            // bugly
+            bugly              : 'com.tencent.bugly:crashreport:latest.release'
+
+    ]
+
+
+}

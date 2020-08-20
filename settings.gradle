@@ -1,0 +1,6 @@
+include ':image_lib'
+include ':http_lib'
+include ':ui_lib'
+include ':base_lib'
+include ':app'
+rootProject.name = "MyApp"
