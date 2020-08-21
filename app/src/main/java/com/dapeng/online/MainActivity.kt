@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
 //         test crashInfo upload     CrashReport.testJavaCrash()
 //            var s:String?=null
 //            val length = s!!.length
-            
+
         }
     }
 }

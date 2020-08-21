@@ -17,4 +17,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.dapeng.ui_lib.ArcRectFView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        app:bottom_arc_weight="1"
+        app:default_color="@color/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:top_rectf_weight="5" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
