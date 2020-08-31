@@ -1,21 +1,32 @@
-package com.dapeng.base_lib;
+package com.dapeng.base_lib.base;
 
 import android.app.Application;
 import android.content.Context;
 
+import com.dapeng.utils_lib.ContextHolder;
+import com.dapeng.utils_lib.DPLogUtils;
 import com.tencent.bugly.crashreport.CrashReport;
 
 public class BaseApplication extends Application {
 
+    public static Context appContext;
+
     @Override
     public void onCreate() {
         super.onCreate();
-        CrashReport.initCrashReport(getApplicationContext(), "9703a551c7", false);
+        DPLogUtils.init(this);
     }
 
     @Override
     protected void attachBaseContext(Context base) {
         super.attachBaseContext(base);
+        appContext = base;
+        ContextHolder.getInstance().init(base);
     }
+
+    public static Context getAppContext() {
+        return appContext;
+    }
+
 
 }

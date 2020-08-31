@@ -24,6 +24,11 @@ android {
 
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
     buildTypes {
         release {
             //开启资源压缩
@@ -58,5 +63,11 @@ dependencies {
 
     implementation project(':base_lib')
     implementation project(':ui_lib')
+    implementation project(':utils_lib')
+
+    implementation rootProject.ext.dependencies.rxpermissions
+    implementation rootProject.ext.dependencies.rxjava
+    implementation rootProject.ext.dependencies.rxandroid
+    implementation rootProject.ext.dependencies.eventbus
 
 }

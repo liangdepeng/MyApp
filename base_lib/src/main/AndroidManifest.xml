@@ -1,5 +1,32 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.dapeng.base_lib">
 
-    /
+    
+    <application>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+            <meta-data
+                android:name="com.dapeng.base_lib.librarystartup.BuglyInit"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="com.dapeng.base_lib.librarystartup.XutilsInit"
+                android:value="androidx.startup" />
+        </provider>
+
+<!--        <provider-->
+<!--            android:name="androidx.startup.InitializationProvider"-->
+<!--            android:authorities="${applicationId}.androidx-startup"-->
+<!--            android:exported="false"-->
+<!--            tools:node="merge">-->
+<!--            <meta-data-->
+<!--                android:name="com.dapeng.base_lib.librarystartup.XutilsInit"-->
+<!--                android:value="androidx.startup" />-->
+<!--        </provider>-->
+        
+    </application>
 </manifest>

@@ -1,6 +1,6 @@
 package com.dapeng.online;
 
-import com.dapeng.base_lib.BaseApplication;
+import com.dapeng.base_lib.base.BaseApplication;
 
 public class MyApplication extends BaseApplication {
 

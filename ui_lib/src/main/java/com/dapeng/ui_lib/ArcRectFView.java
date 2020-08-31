@@ -68,7 +68,7 @@ public class ArcRectFView extends View {
         topRectF.left = 0;
         topRectF.top = 0;
         topRectF.right = width;
-        topRectF.bottom = (height / (allWeight * 2)) * (allWeight * 2 - 1);
+        topRectF.bottom = (height / (allWeight * 2)) * (topRectFWeight * 2 + bottomArcWeight);
 
         bottomRectF.left = 0;
         bottomRectF.top = (height / allWeight) * topRectFWeight;
