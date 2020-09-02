@@ -41,6 +41,8 @@ class ContractMainActivity : BaseActivity() {
     }
 
     private fun initView() {
+        showBackIvTitleAndFunction(true, "联系人")
+
         list_view.adapter = adapter
 
         floating_btn.setOnClickListener {
@@ -138,10 +140,14 @@ class ContractMainActivity : BaseActivity() {
                 }
             }
             for (i in subIds.indices) {
-                getSimQuery("content://icc/adn/subId/" + subIds[i], slotIds[i], i + 1) //这里就是获取双卡的联系人详情void
+                getSimQuery(
+                    "content://icc/adn/subId/" + subIds[i],
+                    slotIds[i],
+                    i + 1
+                ) //这里就是获取双卡的联系人详情void
             }
 
-            DPLogUtils.errorLevel(TAG,adapter.count.toString())
+            DPLogUtils.errorLevel(TAG, adapter.count.toString())
 
             dismissLoadingDialog()
 

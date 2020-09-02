@@ -1,3 +1,4 @@
+include ':scan_lib'
 include ':utils_lib'
 include ':image_lib'
 include ':http_lib'

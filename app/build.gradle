@@ -64,6 +64,7 @@ dependencies {
     implementation project(':base_lib')
     implementation project(':ui_lib')
     implementation project(':utils_lib')
+    implementation project(':scan_lib')
 
     implementation rootProject.ext.dependencies.rxpermissions
     implementation rootProject.ext.dependencies.rxjava

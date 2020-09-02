@@ -47,11 +47,11 @@ ext {
             livedata                  : "android.arch.lifecycle:livedata:1.1.1",
 
             // ViewModel  (androidx )
-            viewmodelX: "androidx.lifecycle:lifecycle-viewmodel:2.2.0",
+            viewmodelX                : "androidx.lifecycle:lifecycle-viewmodel:2.2.0",
             // LiveData  (androidx )
-            livedataX :"androidx.lifecycle:lifecycle-livedata:2.2.0",
+            livedataX                 : "androidx.lifecycle:lifecycle-livedata:2.2.0",
             // alternately - if using Java8, use the following instead of lifecycle-compiler
-            lifecycle_java8X: "androidx.lifecycle:lifecycle-common-java8:2.2.0",
+            lifecycle_java8X          : "androidx.lifecycle:lifecycle-common-java8:2.2.0",
             //--------------------------------------------------------------------------
 
 
@@ -129,6 +129,7 @@ ext {
             PictureSelector           : 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.6',
             //查看大图
             bigImageViewPager         : 'com.github.SherlockGougou:BigImageViewPager:androidx-6.0.1',
+            banner                    : 'com.youth.banner:banner:2.1.0',
             viewpager2                : 'androidx.viewpager2:viewpager2:1.0.0',
 
             Android_PickerView        : 'com.contrarywind:Android-PickerView:4.1.8',
@@ -136,7 +137,6 @@ ext {
             // App Startup是一个可以用于加速App启动速度的一个库, 主要是用于第三方库的自动初始化，不用显示调用初始化。
             // 对于第三方库开发人员来说，避免了 手动调用初始化，也可以手动控制
             startup                   : "androidx.startup:startup-runtime:1.0.0-alpha01",
-
 
             eventbus                  : "org.greenrobot:eventbus:3.2.0"
 
