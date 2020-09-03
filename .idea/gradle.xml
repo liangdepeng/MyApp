@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/base_lib" />
             <option value="$PROJECT_DIR$/http_lib" />
             <option value="$PROJECT_DIR$/image_lib" />
+            <option value="$PROJECT_DIR$/map_lib" />
             <option value="$PROJECT_DIR$/scan_lib" />
             <option value="$PROJECT_DIR$/ui_lib" />
             <option value="$PROJECT_DIR$/utils_lib" />

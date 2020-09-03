@@ -16,6 +16,9 @@
             <meta-data
                 android:name="com.dapeng.base_lib.librarystartup.XutilsInit"
                 android:value="androidx.startup" />
+            <meta-data
+                android:name="com.dapeng.base_lib.librarystartup.BaiDuMapInit"
+                android:value="androidx.startup" />
         </provider>
 
 <!--        <provider-->

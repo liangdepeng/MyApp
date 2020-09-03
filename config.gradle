@@ -54,6 +54,9 @@ ext {
             lifecycle_java8X          : "androidx.lifecycle:lifecycle-common-java8:2.2.0",
             //--------------------------------------------------------------------------
 
+            // recyclerview 分组列表 https://github.com/Liang-depeng/GroupedRecyclerViewAdapter
+            GroupedRecyclerViewAdapter: 'com.github.donkingliang:GroupedRecyclerViewAdapter:2.3.0',
+
 
             // 智能刷新布局框架 刷新布局
             smartRefreshLayout        : 'com.scwang.smart:refresh-layout-kernel:2.0.1',      //核心必须依赖
@@ -138,7 +141,14 @@ ext {
             // 对于第三方库开发人员来说，避免了 手动调用初始化，也可以手动控制
             startup                   : "androidx.startup:startup-runtime:1.0.0-alpha01",
 
-            eventbus                  : "org.greenrobot:eventbus:3.2.0"
+            eventbus                  : "org.greenrobot:eventbus:3.2.0",
+
+            // https://github.com/Justson/AgentWeb
+            // AgentWeb 是一个基于的 Android WebView ，极度容易使用以及功能强大的库
+            // ，提供了 Android WebView 一系列的问题解决方案 ，并且轻量和极度灵活
+            agentweb                  : 'com.just.agentweb:agentweb-androidx:4.1.4', // (必选)
+            filechooser               : 'com.just.agentweb:filechooser-androidx:4.1.4',// (可选)
+            downloader                : 'com.download.library:downloader-androidx:4.1.4'// (可选)
 
     ]
 

@@ -24,6 +24,12 @@ android {
 
     }
 
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -65,6 +71,7 @@ dependencies {
     implementation project(':ui_lib')
     implementation project(':utils_lib')
     implementation project(':scan_lib')
+    implementation project(':map_lib')
 
     implementation rootProject.ext.dependencies.rxpermissions
     implementation rootProject.ext.dependencies.rxjava

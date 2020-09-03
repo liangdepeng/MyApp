@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dapeng.image_lib.GlideLoadUtils
 import com.dapeng.image_lib.XUtilLoadImageUtils
+import com.dapeng.map_lib.MapTestActivity
 import com.dapeng.online.banner.BannerTestActivity
 import com.dapeng.online.contract.ContractMainActivity
 import com.dapeng.online.scan.ScanActivity
@@ -17,6 +18,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        text4.setOnClickListener {
+            startActivity(Intent(this, MapTestActivity::class.java))
+        }
+
+        text3.setOnClickListener {
+            startActivity(Intent(this, GroupListTestActivity::class.java))
+        }
 
         text2.setOnClickListener {
             startActivity(Intent(this, BannerTestActivity::class.java))

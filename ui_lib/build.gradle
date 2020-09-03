@@ -34,5 +34,6 @@ dependencies {
     api rootProject.ext.dependencies.circleimageview
     api rootProject.ext.dependencies.banner
     api rootProject.ext.dependencies.viewpager2
+    api rootProject.ext.dependencies.GroupedRecyclerViewAdapter
 
 }
