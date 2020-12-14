@@ -67,11 +67,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    implementation project(':base_lib')
-    implementation project(':ui_lib')
-    implementation project(':utils_lib')
-    implementation project(':scan_lib')
-    implementation project(':map_lib')
+    implementation project(':component_base_lib')
+    implementation project(':component_ui_lib')
+    implementation project(':component_utils_lib')
+    implementation project(':component_scan_lib')
+    implementation project(':component_map_lib')
 
     implementation rootProject.ext.dependencies.rxpermissions
     implementation rootProject.ext.dependencies.rxjava

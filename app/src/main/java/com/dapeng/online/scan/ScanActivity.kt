@@ -4,8 +4,7 @@ import android.Manifest
 import android.content.Intent
 import android.os.Bundle
 import com.dapeng.base_lib.base.BaseActivity
-import com.dapeng.base_lib.base.BasePermissionRequestActivity
-import com.dapeng.base_lib.toast.ToastUtils
+import com.dapeng.base_lib.interfaces.PermissionCallback
 import com.dapeng.online.R
 import com.dapeng.utils_lib.DPLogUtils
 import com.huawei.hms.hmsscankit.ScanUtil
@@ -43,12 +42,8 @@ class ScanActivity : BaseActivity() {
         scan_btn2.setOnClickListener {
             requestNeedPermissions("权限申请", object : PermissionCallback {
                 override fun hasPermission() {
-                    startActivityForResult(
-                        Intent(
-                            this@ScanActivity,
-                            CustomScanActivity::class.java
-                        ), CustomScanActivity.REQUEST_CUSTOM_SCAN
-                    )
+                    startActivityForResult(Intent(this@ScanActivity,
+                        CustomScanActivity::class.java), CustomScanActivity.REQUEST_CUSTOM_SCAN)
                 }
 
                 override fun noPermission() {

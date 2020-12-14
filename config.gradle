@@ -135,6 +135,12 @@ ext {
             banner                    : 'com.youth.banner:banner:2.1.0',
             viewpager2                : 'androidx.viewpager2:viewpager2:1.0.0',
 
+            // 安卓 Toast 框架 https://github.com/getActivity/ToastUtils
+            toastUtils                : 'com.hjq:toast:8.8',
+            // https://github.com/getActivity/XToast
+            xtoastUtils                : 'com.hjq:xtoast:6.5',
+
+
             Android_PickerView        : 'com.contrarywind:Android-PickerView:4.1.8',
 
             // App Startup是一个可以用于加速App启动速度的一个库, 主要是用于第三方库的自动初始化，不用显示调用初始化。

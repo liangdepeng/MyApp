@@ -11,11 +11,10 @@ import android.telephony.SubscriptionManager
 import android.util.Log
 import androidx.core.app.ActivityCompat
 import com.dapeng.base_lib.base.BaseActivity
+import com.dapeng.base_lib.interfaces.PermissionCallback
 import com.dapeng.base_lib.toast.ToastUtils
-import com.dapeng.online.DefaultRx3Subscribe
 import com.dapeng.online.R
 import com.dapeng.utils_lib.DPLogUtils
-import com.tbruyelle.rxpermissions3.RxPermissions
 import kotlinx.android.synthetic.main.activity_contract_main.*
 
 
@@ -68,8 +67,7 @@ class ContractMainActivity : BaseActivity() {
 
     private fun requestPermission() {
 
-        requestNeedPermissions(
-            "联系人读写权限和电话状态权限申请",
+        requestNeedPermissions("联系人读写权限和电话状态权限申请",
             object : PermissionCallback {
                 override fun hasPermission() {
                     queryDoubleCards()
@@ -81,28 +79,27 @@ class ContractMainActivity : BaseActivity() {
             },
             Manifest.permission.READ_CONTACTS,
             Manifest.permission.WRITE_CONTACTS,
-            Manifest.permission.READ_PHONE_STATE
-        )
+            Manifest.permission.READ_PHONE_STATE)
 
-//        val rxPermissions = RxPermissions(this)
-//        rxPermissions.request(
-//            Manifest.permission.READ_PHONE_STATE,
-//            Manifest.permission.WRITE_CONTACTS,
-//            Manifest.permission.READ_CONTACTS
-//        ).subscribe(object : DefaultRx3Subscribe<Boolean>() {
-//            override fun onNext(t: Boolean) {
-//                super.onNext(t)
-//                if (t)
-//                    queryDoubleCards()
-//                else
-//                    ToastUtils.show("权限被拒绝，可能会导致功能异常")
-//            }
-//
-//            override fun onError(e: Throwable?) {
-//                super.onError(e)
-//
-//            }
-//        })
+        //        val rxPermissions = RxPermissions(this)
+        //        rxPermissions.request(
+        //            Manifest.permission.READ_PHONE_STATE,
+        //            Manifest.permission.WRITE_CONTACTS,
+        //            Manifest.permission.READ_CONTACTS
+        //        ).subscribe(object : DefaultRx3Subscribe<Boolean>() {
+        //            override fun onNext(t: Boolean) {
+        //                super.onNext(t)
+        //                if (t)
+        //                    queryDoubleCards()
+        //                else
+        //                    ToastUtils.show("权限被拒绝，可能会导致功能异常")
+        //            }
+        //
+        //            override fun onError(e: Throwable?) {
+        //                super.onError(e)
+        //
+        //            }
+        //        })
     }
 
     private val subIds = arrayListOf<String>()
@@ -112,10 +109,8 @@ class ContractMainActivity : BaseActivity() {
         showLoadingDialog()
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP_MR1) {
             val subscriptionManager = SubscriptionManager.from(this)
-            val mSubcriptionInfos = if (ActivityCompat.checkSelfPermission(
-                    this, Manifest.permission.READ_PHONE_STATE
-                ) != PackageManager.PERMISSION_GRANTED
-            ) {
+            val mSubcriptionInfos = if (ActivityCompat.checkSelfPermission(this,
+                    Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
                 //  Consider calling
                 //    ActivityCompat#requestPermissions
                 // here to request the missing permissions, and then overriding
@@ -124,8 +119,7 @@ class ContractMainActivity : BaseActivity() {
                 // to handle the case where the user grants the permission. See the documentation
                 // for ActivityCompat#requestPermissions for more details.
                 return
-            } else
-                subscriptionManager.activeSubscriptionInfoList
+            } else subscriptionManager.activeSubscriptionInfoList
 
             val slotIds: MutableList<String> = ArrayList()
             subIds.clear()
@@ -140,11 +134,7 @@ class ContractMainActivity : BaseActivity() {
                 }
             }
             for (i in subIds.indices) {
-                getSimQuery(
-                    "content://icc/adn/subId/" + subIds[i],
-                    slotIds[i],
-                    i + 1
-                ) //这里就是获取双卡的联系人详情void
+                getSimQuery("content://icc/adn/subId/" + subIds[i], slotIds[i], i + 1) //这里就是获取双卡的联系人详情void
             }
 
             DPLogUtils.errorLevel(TAG, adapter.count.toString())
@@ -185,10 +175,8 @@ class ContractMainActivity : BaseActivity() {
                     val keys = cursor.columnNames
                     Log.e(TAG, "开始 ===========================================")
                     for (key in keys) {
-                        Log.e(
-                            TAG,
-                            "key : $key , value : " + cursor.getString(cursor.getColumnIndex(key))
-                        )
+                        Log.e(TAG,
+                            "key : $key , value : " + cursor.getString(cursor.getColumnIndex(key)))
                     }
                     Log.e(TAG, "结束 ===========================================")
                 }
