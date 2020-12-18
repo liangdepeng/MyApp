@@ -32,15 +32,19 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
     implementation rootProject.ext.dependencies.bugly
-    api rootProject.ext.dependencies.RxKit
+    implementation rootProject.ext.dependencies.agentweb
     implementation rootProject.ext.dependencies.startup
+
+    api rootProject.ext.dependencies.RxKit
     api rootProject.ext.dependencies.viewmodelX
     api rootProject.ext.dependencies.livedataX
     api rootProject.ext.dependencies.lifecycle_java8X
+    api project(':component_utils_lib')
 
-    api project(':component_image_lib')
-    implementation project(':component_map_lib')
 
-    implementation project(':component_utils_lib')
+
+    //api project(':component_image_lib')
+    //implementation project(':component_map_lib')
+
 
 }

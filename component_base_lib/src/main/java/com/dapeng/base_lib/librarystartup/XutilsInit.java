@@ -1,24 +1,22 @@
 package com.dapeng.base_lib.librarystartup;
 
-import android.app.Application;
 import android.content.Context;
-import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.startup.Initializer;
 
-import org.xutils.x;
-
 import java.util.ArrayList;
 import java.util.List;
+
+//import org.xutils.x;
 
 public class XutilsInit implements Initializer<String> {
 
     @NonNull
     @Override
     public String create(@NonNull Context context) {
-        x.Ext.init(((Application) context));
-        Log.e("xutils", "xutils is inited");
+//        x.Ext.init(((Application) context));
+//        Log.e("xutils", "xutils is inited");
         return "xutils";
     }
 

@@ -42,11 +42,11 @@ public abstract class BaseActivity extends BasePermissionRequestActivity impleme
 
     /**
      * 判断有没有添加标题栏  xml 文件添加 include< @layout ___自定义通用标题的布局>
-     *
+     * <p>
      * 判断用里面的一个 viewid 就可以 找不到即没有添加 当然排除 android studio 发病的情况，碰到过添加了也不行 然后找半天原因
      * 最后 clean project -> rebuild project ,还有终极操作 Invalidate caches/Restart 能解决大部分的 缓存乱七八糟的问题 比如：
-     *  xml 文件写了viewid 但是 找不到id， color文件配置了颜色 找不到 等等资源相关的问题 一般都是 android studio的问题
-     *  clean project -> rebuild project 终极操作 Invalidate caches/Restart 整个世界都清净了
+     * xml 文件写了viewid 但是 找不到id， color文件配置了颜色 找不到 等等资源相关的问题 一般都是 android studio的问题
+     * clean project -> rebuild project 终极操作 Invalidate caches/Restart 整个世界都清净了
      */
     private boolean hasTitleLayout() {
         if (getContentView().findViewById(R.id.back_iv) == null) {
@@ -148,6 +148,9 @@ public abstract class BaseActivity extends BasePermissionRequestActivity impleme
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (handler != null) {
+            handler.removeCallbacksAndMessages(null);
+        }
         DPLogUtils.errorLevel(tag, tag + "-- onDestroy --");
     }
 

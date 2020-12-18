@@ -69,7 +69,7 @@ dependencies {
 
     implementation project(':component_base_lib')
     implementation project(':component_ui_lib')
-    implementation project(':component_utils_lib')
+    implementation project(':component_image_lib')
     implementation project(':component_scan_lib')
     implementation project(':component_map_lib')
 

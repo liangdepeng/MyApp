@@ -35,7 +35,7 @@ dependencies {
     implementation app.glide
     annotationProcessor app.glideComplier
 
-    api app.xutils
+    implementation app.xutils
 
     implementation project(':component_utils_lib')
 

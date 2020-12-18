@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.dapeng.base_lib">
 
-    
+
     <application>
 
         <provider
@@ -16,20 +16,25 @@
             <meta-data
                 android:name="com.dapeng.base_lib.librarystartup.XutilsInit"
                 android:value="androidx.startup" />
-            <meta-data
-                android:name="com.dapeng.base_lib.librarystartup.BaiDuMapInit"
-                android:value="androidx.startup" />
+            <!--            <meta-data-->
+            <!--                android:name="com.dapeng.base_lib.librarystartup.BaiDuMapInit"-->
+            <!--                android:value="androidx.startup" />-->
         </provider>
 
-<!--        <provider-->
-<!--            android:name="androidx.startup.InitializationProvider"-->
-<!--            android:authorities="${applicationId}.androidx-startup"-->
-<!--            android:exported="false"-->
-<!--            tools:node="merge">-->
-<!--            <meta-data-->
-<!--                android:name="com.dapeng.base_lib.librarystartup.XutilsInit"-->
-<!--                android:value="androidx.startup" />-->
-<!--        </provider>-->
-        
+        <activity
+            android:name=".activity.WebViewActivity"
+            android:configChanges="orientation|screenSize"
+            android:hardwareAccelerated="true" />
+
+        <!--        <provider-->
+        <!--            android:name="androidx.startup.InitializationProvider"-->
+        <!--            android:authorities="${applicationId}.androidx-startup"-->
+        <!--            android:exported="false"-->
+        <!--            tools:node="merge">-->
+        <!--            <meta-data-->
+        <!--                android:name="com.dapeng.base_lib.librarystartup.XutilsInit"-->
+        <!--                android:value="androidx.startup" />-->
+        <!--        </provider>-->
+
     </application>
 </manifest>

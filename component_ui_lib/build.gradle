@@ -36,4 +36,12 @@ dependencies {
     api rootProject.ext.dependencies.viewpager2
     api rootProject.ext.dependencies.GroupedRecyclerViewAdapter
 
+    api rootProject.ext.dependencies.Android_PickerView
+    api rootProject.ext.dependencies.bigImageViewPager
+    api rootProject.ext.dependencies.PictureSelector
+
+    api rootProject.ext.dependencies.smartRefreshLayout
+    api rootProject.ext.dependencies.classicsheader
+    api rootProject.ext.dependencies.footerclassics
+
 }
