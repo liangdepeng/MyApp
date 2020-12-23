@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <include layout="@layout/base_layout_title"/>
+<!--    <include layout="@layout/base_layout_title"/>-->
 
     <com.baidu.mapapi.map.MapView
         android:id="@+id/mapview"

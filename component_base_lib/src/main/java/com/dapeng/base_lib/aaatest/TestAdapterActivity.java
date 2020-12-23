@@ -42,6 +42,18 @@ public class TestAdapterActivity extends BaseActivity implements IMulTiType<Test
         TestRvAdapter testRvAdapter = new TestRvAdapter(this, list, this);
         recyclerview.setAdapter(testRvAdapter);
 
+//        recyclerview.setAdapter(new BaseRecyclerViewAdapter<TestRvBean,BaseRecyclerViewHolder>(this,list) {
+//
+//            @Override
+//            protected int getItemLayResId() {
+//                return R.layout.item_multype_test_one;
+//            }
+//
+//            @Override
+//            protected void onBindNormalItemData(BaseRecyclerViewHolder holder, TestRvBean itemData, int position) {
+//
+//            }
+//        });
 
         View headView1 = LayoutInflater.from(this).inflate(R.layout.item_multype_test_one, recyclerview, false);
         testRvAdapter.addHeadView(headView1,"head01");

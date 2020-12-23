@@ -3,6 +3,7 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
 
@@ -35,6 +36,15 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+    signingConfigs {
+        releaseConfig {
+            storeFile file('../keys/my_sign.jks')
+            storePassword 'qwe123'
+            keyAlias 'key0'
+            keyPassword 'qwe123'
+        }
+    }
+
     buildTypes {
         release {
             //开启资源压缩
@@ -46,6 +56,7 @@ android {
             // Zipalign优化
             zipAlignEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
         }
         debug {
             shrinkResources false
