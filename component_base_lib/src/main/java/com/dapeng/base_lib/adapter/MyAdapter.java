@@ -11,6 +11,7 @@ class MyAdapter extends BaseListAdapter<String>{
         super(context, list, layoutResId);
     }
 
+
     @Override
     protected void onBindItemData(int position, ViewHolder viewHolder, String itemData) {
 

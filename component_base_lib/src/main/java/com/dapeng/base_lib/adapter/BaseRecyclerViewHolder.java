@@ -11,11 +11,17 @@ import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+/**
+ * 通用 RecyclerView ViewHolder
+ *
+ * 链式调用
+ */
 public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder {
 
     public static final int COLOR_DEFAULT = -1;
     public static final int SIZE_DEFAULT = -1;
     private final SparseArray<View> views;
+    public int mRealPosition = 0;
 
     public BaseRecyclerViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -23,6 +29,7 @@ public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder {
     }
 
 
+    @SuppressWarnings("unchecked")
     public <T extends View> T getView(int viewId) {
         View view = views.get(viewId);
         if (view == null) {
@@ -32,18 +39,30 @@ public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder {
         return (T) view;
     }
 
+    /**
+     * 设置 tetView 文字
+     */
     public BaseRecyclerViewHolder setText(int viewId, CharSequence text) {
         return setText(viewId, text, COLOR_DEFAULT, SIZE_DEFAULT);
     }
 
+    /**
+     * 设置 tetView 文字 + 颜色
+     */
     public BaseRecyclerViewHolder setText(int viewId, CharSequence text, @ColorInt int textColor) {
         return setText(viewId, text, textColor, SIZE_DEFAULT);
     }
 
+    /**
+     * 设置 tetView 文字 + 大小
+     */
     public BaseRecyclerViewHolder setText(int viewId, CharSequence text, float textSize) {
         return setText(viewId, text, COLOR_DEFAULT, textSize);
     }
 
+    /**
+     * 设置 tetView 文字 + 颜色 + 大小
+     */
     public BaseRecyclerViewHolder setText(int viewId, CharSequence text, @ColorInt int textColor, float textSize) {
         TextView textView = getView(viewId);
         if (textView != null) {
@@ -58,6 +77,9 @@ public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder {
         return this;
     }
 
+    /**
+     * view 设置背景
+     */
     public BaseRecyclerViewHolder setViewBackground(int viewId, Drawable background) {
         View view = getView(viewId);
         if (view != null) {
@@ -66,6 +88,9 @@ public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder {
         return this;
     }
 
+    /**
+     * 点击事件
+     */
     public BaseRecyclerViewHolder setViewClickListener(int viewId, View.OnClickListener listener) {
         View view = getView(viewId);
         if (view != null && listener != null) {
@@ -74,6 +99,9 @@ public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder {
         return this;
     }
 
+    /**
+     * 长按事件
+     */
     public BaseRecyclerViewHolder setViewLongClickListener(int viewId, View.OnLongClickListener longClickListener) {
         View view = getView(viewId);
         if (view != null && longClickListener != null) {
@@ -82,6 +110,9 @@ public class BaseRecyclerViewHolder extends RecyclerView.ViewHolder {
         return this;
     }
 
+    /**
+     * 设置图片资源
+     */
     public BaseRecyclerViewHolder setImageRes(int viewId, @DrawableRes int resId) {
         ImageView imageView = getView(viewId);
         if (imageView != null) {
