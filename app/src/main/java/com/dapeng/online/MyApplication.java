@@ -3,6 +3,7 @@ package com.dapeng.online;
 import com.baidu.mapapi.CoordType;
 import com.baidu.mapapi.SDKInitializer;
 import com.dapeng.base_lib.base.BaseApplication;
+import com.hjq.toast.ToastUtils;
 
 public class MyApplication extends BaseApplication {
 
@@ -10,9 +11,12 @@ public class MyApplication extends BaseApplication {
     public void onCreate() {
         super.onCreate();
         initMapSDK();
+        initToast();
     }
 
-
+    private void initToast() {
+        ToastUtils.init(this);
+    }
 
 
     private void initMapSDK() {

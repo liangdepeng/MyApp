@@ -3,14 +3,13 @@ package com.dapeng.online.contract;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
-import com.dapeng.base_lib.toast.ToastUtils;
+import com.dapeng.base_lib.toast.ToastUtil;
 
 /**
  * @author Admin
@@ -127,7 +126,7 @@ public class BaseActivity extends AppCompatActivity {
                 }
             } else {
               //  Toast.makeText(this, "暂无权限执行相关操作！", Toast.LENGTH_SHORT).show();
-                ToastUtils.show("暂无权限执行相关操作！");
+                ToastUtil.show("暂无权限执行相关操作！");
                 if (permissionRunnable != null) {
                     permissionRunnable.noPermission();
                     permissionRunnable = null;

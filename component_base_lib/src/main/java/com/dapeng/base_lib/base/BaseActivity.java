@@ -3,8 +3,6 @@ package com.dapeng.base_lib.base;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -18,13 +16,11 @@ import com.dapeng.utils_lib.DPLogUtils;
 public abstract class BaseActivity extends BasePermissionRequestActivity implements IBaseView {
 
     public String tag = getClass().getSimpleName();
-    private Handler handler;
     private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        handler = new Handler(Looper.getMainLooper());
         DPLogUtils.errorLevel(tag, tag + "-- onCreate --");
     }
 
@@ -85,39 +81,23 @@ public abstract class BaseActivity extends BasePermissionRequestActivity impleme
     public void showLoadingDialog() {
         if (progressDialog == null) {
             progressDialog = new ProgressDialog(this);
-            progressDialog.setMessage("     正在加载中...");
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.setMessage("正在加载中...");
         }
 
         // 判断是否是主线程 ，子线程不会显示的，不是主线程 给它 post 丢到主线程
-        if (Looper.myLooper() == Looper.getMainLooper()) {
-            progressDialog.show();
-        } else {
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    progressDialog.show();
-                }
-            });
-        }
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                progressDialog.show();
+            }
+        });
     }
 
     @Override
     public void dismissLoadingDialog() {
-        if (progressDialog == null) {
-            progressDialog = new ProgressDialog(this);
-            progressDialog.setMessage("     正在加载中...");
-        }
-        if (!progressDialog.isShowing())
-            return;
-        if (Looper.myLooper() == Looper.getMainLooper()) {
+        if (progressDialog != null && progressDialog.isShowing()) {
             progressDialog.dismiss();
-        } else {
-            handler.post(new Runnable() {
-                @Override
-                public void run() {
-                    progressDialog.dismiss();
-                }
-            });
         }
     }
 
@@ -148,10 +128,15 @@ public abstract class BaseActivity extends BasePermissionRequestActivity impleme
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (handler != null) {
-            handler.removeCallbacksAndMessages(null);
-        }
         DPLogUtils.errorLevel(tag, tag + "-- onDestroy --");
     }
 
+    @Override
+    public void onBackPressed() {
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        } else {
+            super.onBackPressed();
+        }
+    }
 }

@@ -1,19 +1,15 @@
 package com.dapeng.online.contract
 
 import android.content.ContentValues
-import android.content.Context
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.dapeng.base_lib.toast.ToastUtils
-import com.dapeng.online.MainActivity
+import com.dapeng.base_lib.toast.ToastUtil
 import com.dapeng.online.R
-import com.dapeng.online.contract.ContractMainActivity
 import kotlinx.android.synthetic.main.activity_edit.*
-import java.lang.Exception
 
 public class EditActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListener {
 
@@ -94,9 +90,9 @@ public class EditActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListe
             contentResolver?.delete(Uri.parse(mUri), where, null)
         } catch (e: Exception) {
             e.printStackTrace()
-            ToastUtils.show("删除失败")
+            ToastUtil.show("删除失败")
         }
-        ToastUtils.show("删除成功")
+        ToastUtil.show("删除成功")
         setResult(ContractMainActivity.EDIT_SIM_SUCCESS)
         finish()
     }
@@ -112,9 +108,9 @@ public class EditActivity : AppCompatActivity(), RadioGroup.OnCheckedChangeListe
 
         } catch (e: Exception) {
             e.printStackTrace()
-            ToastUtils.show("更新失败")
+            ToastUtil.show("更新失败")
         }
-        ToastUtils.show("更新成功")
+        ToastUtil.show("更新成功")
         setResult(ContractMainActivity.EDIT_SIM_SUCCESS)
         finish()
     }

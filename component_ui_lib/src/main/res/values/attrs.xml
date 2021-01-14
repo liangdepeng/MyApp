@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="ArcRectFView">
-        <attr name="top_rectf_weight" format="integer" />
-        <attr name="bottom_arc_weight" format="integer" />
-        <attr name="default_color" format="color" />
+        <!-- 顶部矩形比例 -->
+        <attr name="arc_rect_view_rect_weight" format="integer" />
+        <!-- 底部弧形比例 -->
+        <attr name="arc_rect_view_arc_weight" format="integer" />
+        <!-- 整体背景颜色 -->
+        <attr name="arc_rect_view_color" format="color" />
     </declare-styleable>
 </resources>

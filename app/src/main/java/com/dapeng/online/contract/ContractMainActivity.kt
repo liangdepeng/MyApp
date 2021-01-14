@@ -12,7 +12,7 @@ import android.util.Log
 import androidx.core.app.ActivityCompat
 import com.dapeng.base_lib.base.BaseActivity
 import com.dapeng.base_lib.interfaces.PermissionCallback
-import com.dapeng.base_lib.toast.ToastUtils
+import com.dapeng.base_lib.toast.ToastUtil
 import com.dapeng.online.R
 import com.dapeng.utils_lib.DPLogUtils
 import kotlinx.android.synthetic.main.activity_contract_main.*
@@ -74,7 +74,7 @@ class ContractMainActivity : BaseActivity() {
                 }
 
                 override fun noPermission() {
-                    ToastUtils.show("权限被拒绝，可能会导致功能异常")
+                    ToastUtil.show("权限被拒绝，可能会导致功能异常")
                 }
             },
             Manifest.permission.READ_CONTACTS,

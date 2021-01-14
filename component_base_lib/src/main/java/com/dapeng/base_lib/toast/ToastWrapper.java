@@ -39,9 +39,10 @@ public class ToastWrapper {
     private static Field sFiled_TN_Handler;
     private static Toast mToast;
 
-    public static void show(Context context, CharSequence text, int showLength) {
+    public static void show(Context context, CharSequence text, int showLength, int gravity) {
         if (mToast == null) {
             mToast = Toast.makeText(context, text, showLength);
+            mToast.setGravity(gravity,0,0);
         } else {
             mToast.setText(text);
         }

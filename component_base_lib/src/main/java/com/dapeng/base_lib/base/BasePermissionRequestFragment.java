@@ -12,7 +12,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
 import com.dapeng.base_lib.interfaces.PermissionCallback;
-import com.dapeng.base_lib.toast.ToastUtils;
+import com.dapeng.base_lib.toast.ToastUtil;
 
 public class BasePermissionRequestFragment extends Fragment {
 
@@ -64,7 +64,7 @@ public class BasePermissionRequestFragment extends Fragment {
                     .setNegativeButton("取消", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            ToastUtils.show("权限被拒绝，会导致部分功能异常");
+                            ToastUtil.show("权限被拒绝，会导致部分功能异常");
                         }
                     }).show();
         } else {

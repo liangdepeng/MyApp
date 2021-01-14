@@ -5,7 +5,7 @@ import android.view.View;
 
 import com.dapeng.base_lib.adapter.BaseListAdapter;
 import com.dapeng.base_lib.adapter.ViewHolder;
-import com.dapeng.base_lib.toast.ToastUtils;
+import com.dapeng.base_lib.toast.ToastUtil;
 import com.dapeng.online.R;
 
 import java.util.List;
@@ -25,7 +25,7 @@ public class ContractAdapter extends BaseListAdapter<ContractPersonBean> {
                     @Override
                     public void onClick(View v) {
                         // do Nothing
-                        ToastUtils.show("clicked");
+                        ToastUtil.show("clicked");
                     }
                 });
     }

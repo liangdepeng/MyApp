@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import com.dapeng.base_lib.interfaces.PermissionCallback;
-import com.dapeng.base_lib.toast.ToastUtils;
+import com.dapeng.base_lib.toast.ToastUtil;
 
 /**
  * 安卓6.0以上权限申请
@@ -78,7 +78,7 @@ public abstract class BasePermissionRequestActivity extends AppCompatActivity {
                     }).setNegativeButton("取消", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    ToastUtils.show("权限被拒绝，相关功能将无法正常运行！");
+                    ToastUtil.show("权限被拒绝，相关功能将无法正常运行！");
                 }
             }).show();
 
@@ -113,7 +113,7 @@ public abstract class BasePermissionRequestActivity extends AppCompatActivity {
                 }
             } else {
                 //  Toast.makeText(this, "暂无权限执行相关操作！", Toast.LENGTH_SHORT).show();
-                ToastUtils.show("暂无权限执行相关操作！");
+                ToastUtil.show("暂无权限执行相关操作！");
                 if (callback != null) {
                     callback.noPermission();
                     callback = null;
