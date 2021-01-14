@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
-import com.dapeng.utils_lib.DesityUtil;
+import com.dapeng.utils_lib.device.DesityUtil;
 
 
 public class GlideLoadUtils {

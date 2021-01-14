@@ -1,4 +1,4 @@
-package com.dapeng.utils_lib;
+package com.dapeng.utils_lib.device;
 
 import android.os.Build;
 import android.os.Environment;

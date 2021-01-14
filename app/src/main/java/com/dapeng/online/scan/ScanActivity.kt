@@ -6,7 +6,7 @@ import android.os.Bundle
 import com.dapeng.base_lib.base.BaseActivity
 import com.dapeng.base_lib.interfaces.PermissionCallback
 import com.dapeng.online.R
-import com.dapeng.utils_lib.DPLogUtils
+import com.dapeng.utils_lib.log.DPLogUtils
 import com.huawei.hms.hmsscankit.ScanUtil
 import com.huawei.hms.ml.scan.HmsScan
 import com.huawei.hms.ml.scan.HmsScanAnalyzerOptions

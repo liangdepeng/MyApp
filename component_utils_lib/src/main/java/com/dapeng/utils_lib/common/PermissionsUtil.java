@@ -1,4 +1,4 @@
-package com.dapeng.utils_lib;
+package com.dapeng.utils_lib.common;
 
 import android.Manifest;
 import android.annotation.TargetApi;
@@ -21,6 +21,8 @@ import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.PermissionChecker;
+
+import com.dapeng.utils_lib.device.OSUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;

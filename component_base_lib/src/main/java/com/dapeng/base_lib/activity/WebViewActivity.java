@@ -1,5 +1,6 @@
 package com.dapeng.base_lib.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.http.SslError;
@@ -37,6 +38,12 @@ public class WebViewActivity extends BaseActivity {
     public final static String PARAMS_WEB_URL = "params_web_url";
     private AgentWeb.PreAgentWeb preAgentWeb;
 
+    public static void startWebActivity(Context context, String webUrl) {
+        Intent intent = new Intent(context, WebViewActivity.class);
+        intent.putExtra(PARAMS_WEB_URL, webUrl);
+        context.startActivity(intent);
+    }
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,7 +60,6 @@ public class WebViewActivity extends BaseActivity {
         if (preAgentWeb != null) {
             preAgentWeb.go(webUrl);
         }
-        //  .go("https://lovehui99.github.io/");
 
     }
 

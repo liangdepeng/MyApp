@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 
 import com.dapeng.base_lib.R;
 import com.dapeng.base_lib.interfaces.IBaseView;
-import com.dapeng.utils_lib.DPLogUtils;
+import com.dapeng.utils_lib.log.DPLogUtils;
 
 public abstract class BaseActivity extends BasePermissionRequestActivity implements IBaseView {
 

@@ -1,4 +1,4 @@
-package com.dapeng.utils_lib;
+package com.dapeng.utils_lib.viewutil;
 
 import android.text.Editable;
 import android.text.TextUtils;

@@ -1,4 +1,4 @@
-package com.dapeng.utils_lib;
+package com.dapeng.utils_lib.device;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -33,6 +33,10 @@ import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 
 import androidx.annotation.Nullable;
+
+import com.dapeng.utils_lib.common.PermissionsUtil;
+import com.dapeng.utils_lib.common.ThreadUtils;
+import com.dapeng.utils_lib.log.DPLogUtils;
 
 import java.io.FileReader;
 import java.io.InputStreamReader;

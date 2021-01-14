@@ -1,4 +1,4 @@
-package com.dapeng.utils_lib;
+package com.dapeng.utils_lib.log;
 
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
@@ -9,7 +9,7 @@ import android.util.Log;
  */
 public class DPLogUtils {
 
-    public static boolean isDebug;
+    public static boolean isDebug; //
 
     /**
      * 判断当前应用是否是debug状态

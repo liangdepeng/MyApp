@@ -1,4 +1,4 @@
-package com.dapeng.utils_lib;
+package com.dapeng.utils_lib.encrypt;
 
 import java.security.MessageDigest;
 

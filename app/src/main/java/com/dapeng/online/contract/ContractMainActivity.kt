@@ -14,7 +14,7 @@ import com.dapeng.base_lib.base.BaseActivity
 import com.dapeng.base_lib.interfaces.PermissionCallback
 import com.dapeng.base_lib.toast.ToastUtil
 import com.dapeng.online.R
-import com.dapeng.utils_lib.DPLogUtils
+import com.dapeng.utils_lib.log.DPLogUtils
 import kotlinx.android.synthetic.main.activity_contract_main.*
 
 

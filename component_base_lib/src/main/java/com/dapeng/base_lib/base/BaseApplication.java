@@ -3,8 +3,8 @@ package com.dapeng.base_lib.base;
 import android.app.Application;
 import android.content.Context;
 
-import com.dapeng.utils_lib.ContextHolder;
-import com.dapeng.utils_lib.DPLogUtils;
+import com.dapeng.utils_lib.common.ContextHolder;
+import com.dapeng.utils_lib.log.DPLogUtils;
 
 public class BaseApplication extends Application {
 

@@ -9,7 +9,7 @@ import android.view.View
 import android.widget.FrameLayout
 import com.dapeng.base_lib.base.BaseActivity
 import com.dapeng.online.R
-import com.dapeng.utils_lib.DesityUtil
+import com.dapeng.utils_lib.device.DesityUtil
 import com.huawei.hms.hmsscankit.RemoteView
 import com.huawei.hms.hmsscankit.ScanUtil
 import com.huawei.hms.ml.scan.HmsScan

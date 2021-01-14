@@ -1,4 +1,4 @@
-package com.dapeng.utils_lib;
+package com.dapeng.utils_lib.common;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
