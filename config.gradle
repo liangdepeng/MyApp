@@ -35,6 +35,7 @@ ext {
             // 安卓 MaterialDesign
             materialDesign            : 'com.google.android.material:material:1.2.0',
 
+            "constraint_layout"       : 'androidx.constraintlayout:constraintlayout:2.0.4',
 
             //--------------------------------------------------------------------------------------------
             // ----------https://developer.android.google.cn/jetpack/androidx/releases/lifecycle#java--  |
@@ -126,7 +127,10 @@ ext {
             // 包含了orm, http(s), image, view注解, 但依然很轻量级(251K), 并且特性强大, 方便扩展.
             xutils                    : 'org.xutils:xutils:3.9.0',
 
+            // 圆形图片
             circleimageview           : 'de.hdodenhof:circleimageview:3.1.0',
+            // 点赞动画按钮
+            likeButton                : 'com.github.jd-alexander:LikeButton:0.2.3',
 
             //图片选择
             PictureSelector           : 'com.github.LuckSiege.PictureSelector:picture_library:v2.5.6',
@@ -138,7 +142,7 @@ ext {
             // 安卓 Toast 框架 https://github.com/getActivity/ToastUtils
             toastUtils                : 'com.hjq:toast:8.8',
             // https://github.com/getActivity/XToast
-            xtoastUtils                : 'com.hjq:xtoast:6.5',
+            xtoastUtils               : 'com.hjq:xtoast:6.5',
 
 
             Android_PickerView        : 'com.contrarywind:Android-PickerView:4.1.8',

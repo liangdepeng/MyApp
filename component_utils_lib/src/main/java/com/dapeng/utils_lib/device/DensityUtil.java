@@ -1,14 +1,22 @@
 package com.dapeng.utils_lib.device;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.util.DisplayMetrics;
+import android.util.TypedValue;
 
-public class DesityUtil {
+/**
+ * 像素转换 工具类
+ *
+ * dp-px-dp
+ * sp-px-sp
+ *
+ * 屏幕宽度-高度 状态栏高度等
+ */
+public class DensityUtil {
 
     /**
      * px 转 dp
-     * 48px - 16dp
-     * 50px - 17dp
      */
     public static int px2dip(Context context, float pxValue) {
         float scale = getScreenDendity(context);
@@ -16,9 +24,15 @@ public class DesityUtil {
     }
 
     /**
-     * dp转px
-     * 16dp - 48px
-     * 17dp - 51px
+     * dp转px  方法1
+     *
+     */
+    public static int dip2px(float dipValue) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dipValue, Resources.getSystem().getDisplayMetrics());
+    }
+
+    /**
+     * dp转px  方法2
      */
     public static int dip2px(Context context, float dpValue) {
         float scale = getScreenDendity(context);

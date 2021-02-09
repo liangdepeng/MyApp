@@ -32,5 +32,9 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     
     api app.toastUtils
-
+    api rootProject.ext.dependencies.RxKit
+    api rootProject.ext.dependencies.RxUI
+    api rootProject.ext.dependencies.RxCamera
+    api rootProject.ext.dependencies.RxFeature
+    api rootProject.ext.dependencies.RxArcGisKit
 }

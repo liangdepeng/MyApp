@@ -36,7 +36,6 @@ dependencies {
     implementation rootProject.ext.dependencies.agentweb
     implementation rootProject.ext.dependencies.startup
 
-    api rootProject.ext.dependencies.RxKit
     api rootProject.ext.dependencies.viewmodelX
     api rootProject.ext.dependencies.livedataX
     api rootProject.ext.dependencies.lifecycle_java8X

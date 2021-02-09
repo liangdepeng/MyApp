@@ -127,6 +127,9 @@ public abstract class BaseActivity extends BasePermissionRequestActivity impleme
 
     @Override
     protected void onDestroy() {
+        if (progressDialog != null && progressDialog.isShowing()) {
+            progressDialog.dismiss();
+        }
         super.onDestroy();
         DPLogUtils.errorLevel(tag, tag + "-- onDestroy --");
     }

@@ -1,5 +1,7 @@
 package com.dapeng.utils_lib.common;
 
+import androidx.annotation.Nullable;
+
 import java.text.NumberFormat;
 
 
@@ -7,11 +9,11 @@ public class StringUtils {
     /**
      * 取得浮点数保留小数点后两位的字符串
      */
-    public static String getFormatedFloat(final double value) {
+    public static String getFormatFloat(final double value) {
         if (Double.isNaN(value)) {
             return "--";
         }
-        return getFormatedFloat((float) value, 2);
+        return getFormatFloat((float) value, 2);
     }
 
     /**
@@ -21,7 +23,7 @@ public class StringUtils {
      * @param precision 保留小数位数
      * @return
      */
-    public static String getFormatedFloat(final float value, int precision) {
+    public static String getFormatFloat(final float value, int precision) {
         if (Float.isNaN(value)) {
             return "--";
         }
@@ -32,7 +34,7 @@ public class StringUtils {
      * 取得浮点数四舍五入保留小数点后两位的字符串
      */
     public static String getRoundedFloat(final float value) {
-        return getFormatedFloat(value);
+        return getFormatFloat(value);
     }
 
     /**
@@ -40,7 +42,7 @@ public class StringUtils {
      * @return 所有数据都保留2位小数
      */
     public static String getFormattedDouble(final double value) {
-        return getFormatedFloat((float) value, 2);
+        return getFormatFloat((float) value, 2);
     }
 
     /**
@@ -101,7 +103,7 @@ public class StringUtils {
     }
 
     public static String getFormattedDouble(final double value, int precision) {
-        return getFormatedFloat((float) value, precision);
+        return getFormatFloat((float) value, precision);
     }
 
     public static String getFormattedFloat(final float value, int precision) {
@@ -152,6 +154,14 @@ public class StringUtils {
         nf.setMinimumFractionDigits(precision);
         return nf.format(value);
     }
+
+    private final static ThreadLocal<NumberFormat> nf = new ThreadLocal<NumberFormat>(){
+        @Nullable
+        @Override
+        protected NumberFormat initialValue() {
+            return super.initialValue();
+        }
+    };
 
     public static String getIVolume(long volume) {
         if (volume >= 10000) {

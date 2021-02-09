@@ -100,4 +100,9 @@ public abstract class BaseFragment extends BasePermissionRequestFragment impleme
         }
     }
 
+    @Override
+    public View getContentView() {
+        return null;
+    }
+
 }

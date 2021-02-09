@@ -29,6 +29,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
+    implementation project(':component_base_lib')
+
     api rootProject.ext.dependencies.lottie
     api rootProject.ext.dependencies.materialDesign
     api rootProject.ext.dependencies.circleimageview
@@ -43,5 +45,8 @@ dependencies {
     api rootProject.ext.dependencies.smartRefreshLayout
     api rootProject.ext.dependencies.classicsheader
     api rootProject.ext.dependencies.footerclassics
+
+    api rootProject.ext.dependencies.likeButton
+    api rootProject.ext.dependencies.constraint_layout
 
 }

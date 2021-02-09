@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
-import com.dapeng.utils_lib.device.DesityUtil;
+import com.dapeng.utils_lib.device.DensityUtil;
 
 
 public class GlideLoadUtils {
@@ -25,7 +25,7 @@ public class GlideLoadUtils {
         RequestOptions requestOptions = new RequestOptions()
                 .error(R.drawable.ic_load_failed_1)
                 .placeholder(R.drawable.ic_load_failed_1)
-                .transform(new CenterCrop(), new RoundedCorners(DesityUtil.dip2px(context, corners)));
+                .transform(new CenterCrop(), new RoundedCorners(DensityUtil.dip2px(context, corners)));
         //    requestOptions.transform(new CenterCrop(),new GranularRoundedCorners(0,0,0,0));
 
         Glide.with(context)

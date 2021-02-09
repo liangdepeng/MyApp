@@ -11,11 +11,14 @@ import androidx.annotation.Nullable;
 
 import java.util.ArrayList;
 
+/**
+ * 监听页面 所有的输入 Edittext 不为空之后 可以进行下一步操作
+ */
 public class MyTextWatcher implements TextWatcher {
 
-    private View targetView;
-    private ArrayList<TextView> list = new ArrayList<>();
-    private AfterTextChangedCallback callback;
+    private final View targetView;
+    private final ArrayList<TextView> list = new ArrayList<>();
+    private final AfterTextChangedCallback callback;
 
     /**
      * 检测所有edittext 内容非空 设置view是否 Enabled
@@ -26,23 +29,36 @@ public class MyTextWatcher implements TextWatcher {
         this(targetView, null);
     }
 
+    /**
+     * 检测所有edittext 内容非空 设置view是否 Enabled
+     * @param targetView Button 或者 需要的View
+     * @param callback 可以返回 遍历的 View 如果需要除了非空 需要增加额外的校验
+     */
     public MyTextWatcher(@NonNull View targetView, @Nullable AfterTextChangedCallback callback) {
         this.targetView = targetView;
         this.callback = callback;
     }
 
+    /**
+     * 添加需要监听的EditText （EditText 继承于 TextView,方便拓展，无需关心）
+     *
+     */
     public void addEditTexts(TextView... editTexts) {
         if (editTexts == null || editTexts.length <= 0)
             return;
 
         list.clear();
 
+        // 为每一个 EditText 增加监听 缓存起来
         for (int i = 0; i < editTexts.length; i++) {
             editTexts[i].addTextChangedListener(this);
             list.add(editTexts[i]);
         }
     }
 
+    /**
+     * 移除所有监听
+     */
     public void removeAllViews() {
         if (list.size() == 0) return;
 
@@ -53,6 +69,9 @@ public class MyTextWatcher implements TextWatcher {
         list.clear();
     }
 
+    /**
+     * 设置 view enabled
+     */
     private void setEnabled(boolean enabled) {
         if (targetView == null) return;
 
@@ -76,7 +95,7 @@ public class MyTextWatcher implements TextWatcher {
     public void afterTextChanged(Editable s) {
 
         if (list.size() == 0) return;
-
+        //同时获取焦点的只有一个EditText 通过遍历 查询每一个EditText 是否满足条件
         for (int i = 0; i < list.size(); i++) {
             if (TextUtils.isEmpty(list.get(i).getText())) {
                 setEnabled(false);

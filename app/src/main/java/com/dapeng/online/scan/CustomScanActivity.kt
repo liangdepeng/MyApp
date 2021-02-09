@@ -9,7 +9,7 @@ import android.view.View
 import android.widget.FrameLayout
 import com.dapeng.base_lib.base.BaseActivity
 import com.dapeng.online.R
-import com.dapeng.utils_lib.device.DesityUtil
+import com.dapeng.utils_lib.device.DensityUtil
 import com.huawei.hms.hmsscankit.RemoteView
 import com.huawei.hms.hmsscankit.ScanUtil
 import com.huawei.hms.ml.scan.HmsScan
@@ -49,8 +49,8 @@ class CustomScanActivity : BaseActivity() {
     }
 
     private fun initData() {
-        screenWidth = DesityUtil.getScreenWidth(this)
-        screenHeight = DesityUtil.getScreenHeight(this)
+        screenWidth = DensityUtil.getScreenWidth(this)
+        screenHeight = DensityUtil.getScreenHeight(this)
 
         //1. Obtain the screen density to calculate the viewfinder's rectangle.
 

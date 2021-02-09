@@ -118,7 +118,6 @@ public final class DeviceUtil {
     }
 
     public static int dip2px(@Nullable Context context, float dipValue) {
-
         return (int) dip2px(dipValue);
     }
 
