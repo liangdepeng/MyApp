@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 // HUAWEI HMS CROE
 apply plugin: 'com.huawei.agconnect'
 
@@ -35,5 +36,10 @@ dependencies {
     api 'com.huawei.agconnect:agconnect-core:1.3.1.300'
     // 华为扫码 服务
     api 'com.huawei.hms:scan:1.2.2.300'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+}
+repositories {
+    mavenCentral()
 }

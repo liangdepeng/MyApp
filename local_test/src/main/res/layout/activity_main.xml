@@ -12,4 +12,18 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.example.myapplication3.test.IconListHorizontalView
+        android:id="@+id/icon_rv"
+        app:layout_constraintTop_toBottomOf="@+id/test_rv"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.example.myapplication3.test.IconListHorizontalView
+        android:id="@+id/icon_rv2"
+        app:layout_constraintTop_toBottomOf="@+id/icon_rv"
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
