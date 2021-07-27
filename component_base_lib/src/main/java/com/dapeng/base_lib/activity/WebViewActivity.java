@@ -185,7 +185,6 @@ public class WebViewActivity extends BaseActivity {
         }
     };
 
-
     private final WebChromeClient webChromeClient = new WebChromeClient() {
         @Override
         public void onProgressChanged(WebView view, int newProgress) {

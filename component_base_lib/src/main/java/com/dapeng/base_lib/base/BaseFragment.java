@@ -1,5 +1,6 @@
 package com.dapeng.base_lib.base;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,6 +18,11 @@ public abstract class BaseFragment extends BasePermissionRequestFragment impleme
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
+    }
+
+    @Override
+    public void onAttach(@NonNull Activity activity) {
+        super.onAttach(activity);
     }
 
     @Override

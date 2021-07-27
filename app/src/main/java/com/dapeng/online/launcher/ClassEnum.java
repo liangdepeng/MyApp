@@ -8,6 +8,7 @@ import com.dapeng.online.banner.BannerTestActivity;
 import com.dapeng.online.contract.ContractMainActivity;
 import com.dapeng.online.scan.ScanActivity;
 import com.dapeng.online.webtest.WebTestActivity;
+import com.process.example.client.ClientActivity;
 
 /**
  * Created by ldp.
@@ -35,7 +36,9 @@ public enum ClassEnum {
 
     ACTIVITY_BAI_DU_MAP_TEST("百度地图", MapTestActivity.class,false),
 
-    ACTIVITY_TEST_RECYCLERVIEW_ADAPTER_TEST("测试",TestAdapterActivity.class,false);
+    ACTIVITY_TEST_RECYCLERVIEW_ADAPTER_TEST("测试",TestAdapterActivity.class,false),
+
+    ACTIVITY_PROCESS_CONNECT_TEST("进程通信测试", ClientActivity.class,false);
 
     private String title;
     private Class<?> clz;

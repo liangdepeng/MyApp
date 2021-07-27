@@ -7,3 +7,6 @@ include ':component_ui_lib'
 include ':component_base_lib'
 include ':app'
 rootProject.name = "MyApp"
+include ':local_client'
+include ':local_server'
+include ':local_test'

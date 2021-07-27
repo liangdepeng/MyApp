@@ -75,7 +75,7 @@ public class ToastWrapper {
 
     private static class SafeHandlerWrapper extends Handler {
 
-        private Handler handler;
+        private final Handler handler;
 
         public SafeHandlerWrapper(Handler handler) {
             this.handler = handler;

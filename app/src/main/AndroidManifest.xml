@@ -47,6 +47,21 @@
         <activity android:name=".banner.BannerTestActivity" />
         <activity android:name=".GroupListTestActivity" />
 
+
+        <!-- 客户端 界面 -->
+        <activity android:name="com.process.example.client.ClientActivity"/>
+
+        <!-- 服务端进程 android:process=":aidlserver"-->
+        <service android:name="com.process.example.server.MyAidlService"
+            android:exported="true"
+            android:process=":aidlserver">
+<!--            <intent-filter >-->
+<!--                <action android:name="com.process.example.server.serveraidl"/>-->
+<!--                <category android:name="android.intent.category.DEFAULT"/>-->
+<!--            </intent-filter>-->
+        </service>
+
+
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="oWI0NEahWXPIdWCh1d877nbbG0mGQiBV" />
